@@ -2,6 +2,8 @@
 
 You have downloaded the complete p5.js library ZIP file, yay!
 
+python -m SimpleHTTPServer
+
 # Contents of the p5 folder
 
 * p5.js file

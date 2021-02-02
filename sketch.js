@@ -1,4 +1,8 @@
-let bug; 
+let crystal_moon;
+
+function preload(){
+  crystal_moon = loadImage('crystal_moon.png');
+}
 
 function setup() {
   createCanvas(540, 960);
@@ -8,9 +12,11 @@ function setup() {
 
 function draw() {
   background(50, 89, 100);
+imageMode(CENTER);
+image(crystal_moon, width/2, height/5);
 
-  fill(0);
-circle(width/2, height/5, 175);
+  //fill(255, 255, 255);
+//circle(width/2, height/5, 175);
 
   moon.move();
   moon.display();

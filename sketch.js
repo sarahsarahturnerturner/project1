@@ -1,9 +1,16 @@
 let crystal_moon;
+let left_butterfly;
+let right_butterfly;
+let front_butterfly;
+
 let eclipseness = 0;
 let timer = 0;
 
 function preload(){
   crystal_moon = loadImage('crystal_moon.png');
+  left_butterfly = loadImage('sidebutterfly.png');
+  right_butterfly = loadImage('right_sidebutterfly.png');
+  front_butterfly = loadImage('butterfly_front.png');
 }
 
 function setup() {
@@ -16,6 +23,10 @@ function draw() {
   background(50, 89, 100);
 imageMode(CENTER);
 image(crystal_moon, width/2, height/5);
+image(left_butterfly, 108, 576);
+image(right_butterfly, 432, 576);
+
+
 timer++;
 if (timer%3== 0){
 

@@ -1,4 +1,6 @@
 let crystal_moon;
+let eclipseness = 0;
+let timer = 0;
 
 function preload(){
   crystal_moon = loadImage('crystal_moon.png');
@@ -14,12 +16,20 @@ function draw() {
   background(50, 89, 100);
 imageMode(CENTER);
 image(crystal_moon, width/2, height/5);
+timer++;
+if (timer%3== 0){
 
+  if (eclipseness < 90){
+    eclipseness++;
+  } else {
+    eclipseness = 0;
+  }
+}
   //fill(255, 255, 255);
 //circle(width/2, height/5, 175);
 
-  moon.move();
-  moon.display();
+  //moon.move();
+  moon.display(eclipseness);
 }
 
 
@@ -40,8 +50,11 @@ class Phase {
  }
   }
 
-  display() {
+  display(eclipseness) {
     noStroke();
+    print(this.x);
+
+  this.x = map(eclipseness, 0, 90, 110, 450);
     fill(50, 89, 100);
     ellipse(this.x, this.y, this.diameter, this.diameter);
   }

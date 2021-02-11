@@ -6,6 +6,8 @@ let left_waterbabe;
 let right_waterbabe;
 let opal;
 let aquamarine;
+let candles;
+let amethyst;
 
 let eclipseness = 0;
 let timer = 0;
@@ -22,6 +24,8 @@ function preload(){
   right_waterbabe = loadImage('waterbearerRIGHT.png');
   opal = loadImage('opal.png');
   aquamarine = loadImage('aquamarine.png');
+  candles = loadImage('candles.png');
+  amethyst = loadImage('amethyst.png');
 }
 
 function setup() {
@@ -32,6 +36,8 @@ function setup() {
 
 function draw() {
 
+
+
  // background(186, 56, 209);
 var color1 = color(235, 52, 232);
 var color2 = color(49, 204, 235);
@@ -39,6 +45,14 @@ setGradient(0, 0, width, height, color1, color2, "Y");
 imageMode(CENTER);
 image(crystal_moon, width/2, height/5);
 
+image(opal, 480, 530);
+image(opal, 50, 530);
+
+push();
+scale(.15);
+image(amethyst, 1300, 350);
+image(amethyst, 2300, 350);
+pop();
 
 push();
 scale(.7);
@@ -46,17 +60,40 @@ image(left_waterbabe, 225, 900);
 image(right_waterbabe, 525, 900);
 pop();
 
-image(left_butterfly, 108, 576);
-image(right_butterfly, 432, 576);
-image(front_butterfly, 200, 576);
-image(opal, 400, 576);
-image(aquamarine, 200, 576);
-//text(100,100,getFrameRate());
-text("frameRate " + int(getFrameRate()), 100, 100);
+image(left_butterfly, 120, 300);
+image(right_butterfly, 420, 300);
+image(left_butterfly, 50, 576);
+image(right_butterfly, 490, 576);
+
+image(left_butterfly, 50, 50);
+image(right_butterfly, 500, 50);
+image(front_butterfly, 270, 50);
+image(front_butterfly, 420, 50);
+image(front_butterfly, 120, 50);
+
+// image(left_butterfly, 50, 150);
+
+image(front_butterfly, 260, 430);
+image(opal, 480, 370);
+image(opal, 50, 370);
+image(aquamarine, 480, 450);
+image(aquamarine, 50, 450);
+
+push();
+scale(.4);
+image(amethyst, 650, 2200);
+image(amethyst, 300, 2200);
+image(amethyst, 1000, 2200);
+image(candles, 475, 2100);
+image(candles, 825, 2100);
+pop();
+
+//frame rate below >>>
+//text("frameRate " + int(getFrameRate()), 100, 100);
 
 
 timer++;
-if (timer%2== 0){
+if (timer%3== 0){
 
   if (eclipseness < 90){
     eclipseness++;
